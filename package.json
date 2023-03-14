@@ -1,0 +1,19 @@
+{
+  "name": "data-structures-algorithms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@Hani:Umme-hanii/Data-Structures-Algorithms.git"
+  },
+  "author": "Umme Hani",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.5.0"
+  }
+}
