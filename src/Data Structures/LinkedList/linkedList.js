@@ -1,5 +1,7 @@
 
 "use strict";
+const removeDuplicates = require('./removeDuplicates.js')
+const findNthNode = require('./nthNodeFromEnd.js')
 class Node {
  constructor(data) {
    this.data=data;
@@ -7,7 +9,7 @@ class Node {
   }
 }
 
-module.exports = class LinkedList {
+class LinkedList {
   constructor() {
     this.head = null;
   }
@@ -143,4 +145,9 @@ module.exports = class LinkedList {
     deleted = false;
     return deleted;
   }
+
 }
+LinkedList.prototype.removeDuplicates = removeDuplicates
+LinkedList.prototype.findNthNode = findNthNode
+
+module.exports = LinkedList

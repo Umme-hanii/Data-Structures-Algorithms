@@ -67,3 +67,76 @@ describe('Linked List', () => {
     expect(linkedList.isEmpty()).toEqual(false);
   });
 });
+
+describe('LinkedList', () => {
+  describe('removeDuplicates', () => {
+    test('should remove duplicates from a list', () => {
+      const linkedList = new LinkedList();
+      linkedList.insertAtTail(1);
+      linkedList.insertAtTail(2);
+      linkedList.insertAtTail(3);
+      linkedList.insertAtTail(2);
+      linkedList.insertAtTail(4);
+      linkedList.insertAtTail(3);
+      linkedList.insertAtTail(5);
+      
+      const expectedList = new LinkedList();
+      expectedList.insertAtTail(1);
+      expectedList.insertAtTail(2);
+      expectedList.insertAtTail(3);
+      expectedList.insertAtTail(4);
+      expectedList.insertAtTail(5);
+      
+      linkedList.removeDuplicates();
+      
+      expect(linkedList.getListStr()).toBe(expectedList.getListStr());
+    });
+    
+    test('should return null if list is empty', () => {
+      const linkedList = new LinkedList();
+      
+      expect(linkedList.removeDuplicates()).toBeNull();
+    });
+    
+    test('should return the same list if it has only one node', () => {
+      const linkedList = new LinkedList();
+      linkedList.insertAtTail(1);
+      
+      const expectedList = new LinkedList();
+      expectedList.insertAtTail(1);
+      
+      expect(linkedList.removeDuplicates().getListStr()).toBe(expectedList.getListStr());
+    });
+  });
+});
+
+describe('findNthNode', () => {
+  let list;
+  beforeEach(() => {
+    list = new LinkedList();
+    list.insertAtHead(3);
+    list.insertAtHead(2);
+    list.insertAtHead(1);
+    list.insertAtHead(0);
+  });
+
+  it('returns null if the list is empty', () => {
+    list.deleteAtHead();
+    list.deleteAtHead();
+    list.deleteAtHead();
+    list.deleteAtHead();
+    expect(list.findNthNode(3)).toBeNull();
+  });
+
+  it('returns null if the provided n is out of bounds', () => {
+    expect(list.findNthNode(5)).toBeNull();
+  });
+
+  it('returns the nth node from the end', () => {
+    expect(list.findNthNode(2).data).toBe(2);
+  });
+
+  // it('returns the head node when n is 0', () => {
+  //   expect(list.findNthNode(0).data).toBe(0);
+  // });
+});
