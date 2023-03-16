@@ -48,10 +48,12 @@ describe('DoublyLinkedList', () => {
     list.insertAtTail(3)
 
     expect(list.firstNode()).toBe(1)
+    expect(list.tailNode()).toBe(3)
   })
 
   test('firstNode should return null if list is empty', () => {
     expect(list.firstNode()).toBeNull()
+    expect(list.tailNode()).toBeNull()
   })
 
   test('toString should return a string representation of the list', () => {

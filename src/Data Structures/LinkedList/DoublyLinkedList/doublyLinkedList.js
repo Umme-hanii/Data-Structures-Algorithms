@@ -50,6 +50,12 @@ module.exports = class DoublyLinkedList {
         else return null
     }
 
+    //Return last node of doubly linked list
+    tailNode() {
+        if(this.tail) return this.tail.data
+        else return null
+    }
+
     //Return list items
     toString() {
         const list = []
@@ -59,7 +65,6 @@ module.exports = class DoublyLinkedList {
             list.push(JSON.stringify(currentNode.data))
             currentNode = currentNode.next
         }
-        console.log(list.toString())
         return list.toString()
     }
 }
