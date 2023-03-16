@@ -6,7 +6,7 @@ module.exports = function findNthNode(n) {
     let count = 0
     while(count < n) {
         if(endNode == null) {
-            console.log("Out of bounds")
+            // console.log("Out of bounds")
             return null
         }
         endNode = endNode.nextElement

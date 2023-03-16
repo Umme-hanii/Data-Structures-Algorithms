@@ -1,14 +1,19 @@
 "use strict";
-const LinkedList = require('./src/Data Structures/LinkedList/linkedList');
+const Stack = require('./src/Data Structures/Stack/stack');
 
-let l1 = new LinkedList();
-l1.insertAtHead(23);
-l1.insertAtHead(76);
-l1.insertAtHead(49);
-l1.insertAtHead(54);
-l1.insertAtHead(22);
+const myStack = new Stack()
 
-for (var i = 1; i < 5; i++) {
-  console.log(l1.findNthNode(i).data);
+for (var i = 0; i < 5; i++) {
+  myStack.push(i);
 }
-console.log(l1.findNthNode(100));
+
+console.log("Is stack empty? " + myStack.isEmpty());
+console.log("top: " + myStack.getTop());
+
+for (var i = 0; i < 5; i++) {
+  console.log("Element popped: " + myStack.pop());
+  console.log("top: " + myStack.getTop());
+}
+
+console.log("Is stack empty?: " + myStack.isEmpty());
+console.log("top: " + myStack.getTop());
