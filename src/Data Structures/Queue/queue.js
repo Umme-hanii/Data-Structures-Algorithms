@@ -2,7 +2,7 @@
 // isEmpty	    O(1)
 // getFront	    O(1)
 // getTail	    O(1)
-// size	        O(1)
+// size	            O(1)
 // enqueue  	O(1)
 // dequeue	    O(1)
 const DoublyLinkedList = require('../LinkedList/DoublyLinkedList/doublyLinkedList')
