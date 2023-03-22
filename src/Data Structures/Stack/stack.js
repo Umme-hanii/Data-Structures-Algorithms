@@ -41,4 +41,13 @@ module.exports = class Stack {
         } else
             return null
     }
+
+    print() {
+        let str = ''
+        for(let i = 0; i < this.items.length; i++) {
+            str = str + this.items[i] + '->'
+        }
+        str = str + '-> top'
+        console.log(str)
+    }
 }
