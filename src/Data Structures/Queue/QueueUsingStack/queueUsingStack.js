@@ -2,8 +2,8 @@
 const Stack = require('../../Stack/stack')
 
 //Time Complexity
-//enqueue  - O(1)
-//dequeue  - O(n)
+//enqueue  - O(n)
+//dequeue  - O(1)
 
 class queueUsingStack {
     constructor() {
@@ -12,22 +12,18 @@ class queueUsingStack {
     }
 
     enqueue(value) {
-        this.mainStack.push(value)
-        return true
-    }
-
-    dequeue() {
-        if(this.mainStack.isEmpty()) 
-            return null
-        
         while(!this.mainStack.isEmpty()) {
             this.tempStack.push(this.mainStack.pop())
         }
-        const element = this.tempStack.pop()
+        this.mainStack.push(value)
         while(!this.tempStack.isEmpty()) {
             this.mainStack.push(this.tempStack.pop())
         }
-        return element
+    }
+
+    dequeue() {
+        if(this.mainStack.isEmpty()) return null
+        return this.mainStack.pop()
     }
 
     print() {
@@ -61,6 +57,6 @@ queue.print()
 // dequeue()
 
 // Sample Output
-// True //[1, 2, 3, 4, 5]
+//[1, 2, 3, 4, 5]
 // 1 //[2, 3, 4, 5]
 
