@@ -2,8 +2,8 @@
 const Stack = require('../../Stack/stack')
 
 //Time Complexity
-//enqueue  - O(n)
-//dequeue  - O(1)
+//enqueue  - O(1)
+//dequeue  - O(n)
 
 class queueUsingStacks3 {
     constructor() {
