@@ -1,29 +1,7 @@
-"use strict";
-const Queue = require('./src/Data Structures/Queue/queue');
+'use strict'
+const mergeArrays = require('./src/Data Structures/Arrays/Challenges/mergeSortedArrays.js')
 
-var myQueue = new Queue();
-console.log("You have successfully created a Queue of size: " + myQueue.size());
-console.log("Enqueue Elements 2,4,6,8,10");
-myQueue.enqueue(2);
-myQueue.enqueue(4);
-myQueue.enqueue(6);
-myQueue.enqueue(8);
-myQueue.enqueue(10);
+let arr1 = [1, 3, 4, 5]
+let arr2 = [2, 6, 7, 8]
 
-
-console.log("Dequeue(): " + myQueue.dequeue());
-console.log("Dequeue(): " + myQueue.dequeue());
-
-console.log("getFront(): " + myQueue.getFront());
-console.log("getBack(): " + myQueue.getBack());
-
-console.log("Enqueue Elements 12,14");
-myQueue.enqueue(12);
-myQueue.enqueue(14);
-
-while (myQueue.isEmpty() == false) {
-    console.log("Dequeue(): " + myQueue.dequeue());
-}
-
-console.log("Is queue empty()?: " + myQueue.isEmpty())
-console.log("getFront(): " + myQueue.getFront());
+console.log(mergeArrays(arr1, arr2))
