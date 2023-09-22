@@ -27,7 +27,20 @@ function findProduct2(arr) {
   return result
 }
 
+function findProduct3(arr) {
+  let product = 1
+  for (let i = 0; i < arr.length; i++) {
+    product *= arr[i]
+  }
+  for (let i = arr.length - 1; i >= 0; i--) {
+    arr[i] = product / arr[i]
+  }
+  return arr
+}
+
 console.log(findProduct1([1, 2, 3, 4]))
 console.log(findProduct1([2, 5, 9, 3, 6]))
 console.log(findProduct2([1, 2, 3, 4]))
 console.log(findProduct2([2, 5, 9, 3, 6]))
+console.log(findProduct3([1, 2, 3, 4]))
+console.log(findProduct3([2, 5, 9, 3, 6]))
